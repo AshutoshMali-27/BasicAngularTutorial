@@ -108,3 +108,51 @@ currency pipes -->
 
 
 <app-header></app-header>
+
+<h1>Basic Form</h1>
+<form  #basicForm="ngForm"  (ngSubmit)="getData(basicForm.value)">
+<input type="text" ngModel name="user" placeholder="enter user Name">
+<br>
+<br>
+<input type="text" ngModel name="email" placeholder="Enter user Email">
+<br>
+<br>
+<input type="text" ngModel name="password" placeholder="Enter User Password">
+<br>
+<br>
+
+<button>Register</button>
+</form>
+<ul>
+  <li>{{Userdata.user}}</li>
+  <li>{{Userdata.email}}</li>
+  <li>{{Userdata.password}}</li>
+</ul>
+
+<h1>Toggle</h1>
+
+<button (click)="toggle()">TOGGLE</button>
+<h4 *ngIf="display">heading tag</h4>
+
+<h3>angular Bootstrap</h3>
+<ngb-alert [dismissible]="false">
+	<strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert>
+
+
+<h3>To do lsit</h3>
+
+<input type="text" placeholder="enter new task" #task/>
+<br>
+<br>
+<button (click)="addtask(task.value)">Add Taks</button>
+
+
+<ul *ngFor="let item of list">
+  <li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
+
+</ul>
+
+
+
+<app-child [item]="datas"></app-child>

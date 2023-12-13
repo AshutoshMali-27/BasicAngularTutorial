@@ -8,19 +8,26 @@ import { Comp1Component } from './Component/comp1/comp1.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { UserpipePipe } from './userpipe.pipe';
 import { HeaderComponent } from './Component/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChildComponent } from './Component/child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Comp1Component,
     UserpipePipe,
-    HeaderComponent
+    HeaderComponent,
+    ChildComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserAuthModule
+    UserAuthModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

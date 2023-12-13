@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +27,7 @@ userDetail=[
   {name:'Rohit',email:'Rohit@123.com',phone:'8054'},
 ];
   data="hello world";
+  datas=10;
   num =100;
   name='peter';
   disable=false;
@@ -63,4 +66,34 @@ count=0
   updatebgcolor(){
     this.bgcolor='blue';
   }
+
+  Userdata:any=[]
+
+  getData(data:NgForm){
+    console.warn(data);
+    this.Userdata=data;
+  }
+
+  display=false;
+
+  toggle(){
+this.display=!this.display;
+  }
+
+  list:any[]=[];
+  addtask(item:string){
+   
+    this.list.push({id:this.list.length,name:item});
+    console.warn(this.list);
+
+  }
+
+  removeTask(id:number){
+
+    this.list=this.list.filter(item=>item.id!==id)
+    console.warn(id)
+
+  }
+
+
 }
