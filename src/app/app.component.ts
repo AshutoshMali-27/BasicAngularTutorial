@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'Helloworld my name is Ashutosh mali';
   color="palevioletred";
+  Dataitem=10;
 users=['Ashutosh','naksh','omkar','rohit','rahul'];
 
 
@@ -27,6 +28,7 @@ userDetail=[
   {name:'Rohit',email:'Rohit@123.com',phone:'8054'},
 ];
   data="hello world";
+  
   datas=10;
   num =100;
   name='peter';
@@ -95,5 +97,9 @@ this.display=!this.display;
 
   }
 
+
+  updateChild(){
+    this.Dataitem= Math.floor(Math.random()*10) ;
+  }
 
 }

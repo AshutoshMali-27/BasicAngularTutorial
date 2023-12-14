@@ -10,7 +10,9 @@ export class ChildComponent implements OnInit {
 
   constructor(){}
   
-  Input() item = 0;
+
+  @ Input() itemid=0;
+  
     ngOnInit(): void {
       
   }
