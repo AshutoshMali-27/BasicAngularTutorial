@@ -161,4 +161,72 @@ currency pipes -->
 
 <button (click)="updateChild()"> Update Child Component</button>
 
-<h4>Resuabel component</h4>
+<!-- <h4>Resuabel component</h4> -->
+<h3>Two way binding</h3>
+
+
+<input type="text" [(ngModel)]="namea">
+
+<h1>{{namea}}</h1>
+
+<h3>Template refrance variable</h3>
+
+<input type="text" #boxa>
+<button (click)="getval(boxa.value)">call function</button>
+
+<!-- 
+<h3>Template driven forms</h3>
+<form #loginform="ngForm" (ngSubmit)="loginuser(loginform.value)">
+  <input type="text" placeholder="enter name" name="name" ngModel>
+  <br><br>
+  <input type="password" placeholder="enter password" name="password" ngModel>
+  <br><br>
+  <button>Login</button>
+
+</form>
+
+
+<button (click)="loginuser(loginform.value)"> signup</button> -->
+
+<h3>Reactive form</h3>
+<form [formGroup]="loginformab" (ngSubmit)="loginuserform()">
+
+  <input type="text" placeholder="enter name" name="userbind" formControlName="userbind">
+  <br>
+  
+  <br>
+  <input type="password"  name="passwordforform" formControlName="passwordforform">
+  <br>
+  <br>
+  <button>clikc</button>
+</form>
+
+
+<h3>Directive</h3>
+<h1 appRedgl>{{title}}</h1>
+
+
+
+<h1>code by ashutosh mali</h1>
+<a routerLink="user"> home</a>
+<br>
+<a routerLink="about"> about</a>
+<br>
+<a routerLink="self"> User</a>
+
+<br>
+
+
+<a routerLink="user/1"> home</a>
+<br>
+<a routerLink="user/2"> about</a>
+<br>
+<a routerLink="user/3"> User</a>
+<router-outlet></router-outlet>
+
+
+<ul>
+  <li *ngFor=" let item2 of ashutosh">
+  {{item2.name}} {{item2.age}} {{item2.email}}
+  </li>
+</ul>

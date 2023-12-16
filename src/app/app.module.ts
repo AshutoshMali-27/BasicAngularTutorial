@@ -12,14 +12,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChildComponent } from './Component/child/child.component';
-
+import { RedglDirective } from './Directives/redgl.directive';
+import { HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     Comp1Component,
     UserpipePipe,
     HeaderComponent,
-    ChildComponent
+    ChildComponent,
+    RedglDirective
 
   ],
   imports: [
@@ -27,7 +29,10 @@ import { ChildComponent } from './Component/child/child.component';
     AppRoutingModule,
     UserAuthModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

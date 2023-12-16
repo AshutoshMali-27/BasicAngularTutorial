@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, NgForm,Validator } from '@angular/forms';
+import { YService } from './y.service';
 
 @Component({
   selector: 'app-root',
@@ -101,5 +101,37 @@ this.display=!this.display;
   updateChild(){
     this.Dataitem= Math.floor(Math.random()*10) ;
   }
+
+  namea:any;
+
+  getval(itema:any){
+    debugger;
+    console.warn(itema)
+  }
+
+
+  loginuser(itemb:any){
+    console.warn(itemb)
+  }
+
+  loginformab =new FormGroup({
+    userbind:new FormControl(''),
+    passwordforform:new FormControl('')
+  });
+  loginuserform(){
+    console.warn(this.loginformab.value);
+    
+  }
+
+    ashutosh:any;
+
+  constructor(private metadata:YService){
+    debugger;
+    console.warn("metadata",metadata.ashu)
+    this.ashutosh=metadata.ashu();
+  }
+
+
+
 
 }
